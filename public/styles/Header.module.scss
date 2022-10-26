@@ -9,10 +9,21 @@
     flex-direction: column;
     padding: 0 30px;
     position: fixed;
-    top: 0;
     left: 0;
     z-index: 100;
     background-color: $main-color;
+    animation: ShowHeader 1s linear forwards;
+    @keyframes ShowHeader {
+        0% {
+            top: -140px;
+        }
+        75% {
+            top: 30px
+        }
+        100% {
+            top: 0;
+        }
+    }
     &_links {
         display: flex;
         justify-content: center;
@@ -40,16 +51,16 @@
             }
             &:hover {
                 &::after {
-                    width: 50%;
+                    width: 25%;
                 }
             }
             &_active {
                 &::after {
-                    width: 100%;
+                    width: 75%;
                 }
                 &:hover {
                     &::after {
-                        width: 100%;
+                        width: 75%;
                     }
                 }
             }

@@ -34,13 +34,15 @@
 body {
     margin: 0;
     background-color: $bg-color;
-    animation: ShowApp 1s linear forwards;
-    @keyframes ShowApp {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
+    #wrapper {
+        animation: ShowApp 1s linear forwards;
+        @keyframes ShowApp {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     }
     main {
