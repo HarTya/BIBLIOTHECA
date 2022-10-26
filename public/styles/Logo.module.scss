@@ -1,0 +1,30 @@
+@import '../styles/color-variables';
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1;
+    padding: 10px 0;
+    &_title {
+        font-size: 50px;
+        letter-spacing: 1px;
+        font-family: LoraBold, sans-serif;
+    }
+    &_subtitle {
+        font-size: 17px;
+        letter-spacing: 2px;
+        width: 100vw; 
+        text-align: center;
+        border-bottom: 2px solid $second-color; 
+        line-height: 0.1em; 
+        margin: 10px 0;
+        span {
+            font-family: LatoBold, sans-serif;
+            padding: 0 10px;
+            background-color: $main-color;
+        }
+    }
+}

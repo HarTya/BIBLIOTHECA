@@ -1,0 +1,51 @@
+@import '../styles/color-variables';
+
+@font-face {
+    font-family: LatoRegular;
+    src: url('../fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: LatoSemibold;
+    src: url('../fonts/Lato/Lato-Semibold.ttf');
+}
+
+@font-face {
+    font-family: LatoBold;
+    src: url('../fonts/Lato/Lato-Bold.ttf');
+}
+
+@font-face {
+    font-family: LoraBold;
+    src: url('../fonts/Lora/Lora-Bold.ttf');
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: $second-color;
+    font-family: LatoRegular, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: $bg-color;
+    animation: ShowApp 1s linear forwards;
+    @keyframes ShowApp {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    main {
+        position: relative;
+        top: 140px;
+        padding: 30px;
+    }
+}
