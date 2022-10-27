@@ -8,26 +8,14 @@
     align-items: center;
     flex-direction: column;
     padding: 0 30px;
-    position: fixed;
-    left: 0;
-    z-index: 100;
+    position: relative;
     background-color: $main-color;
-    animation: ShowHeader 0.8s linear forwards;
-    @keyframes ShowHeader {
-        0% {
-            top: -140px;
-        }
-        75% {
-            top: 30px
-        }
-        100% {
-            top: 0;
-        }
-    }
     &_links {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        bottom: 0;
         &_link {
             font-size: 20px;
             font-family: LatoBold, sans-serif;
