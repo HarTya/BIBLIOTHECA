@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import styles from '@/styles/Header.module.scss';
 
-ActiveLink.defaultProps = {
+NavLink.defaultProps = {
     exact: false
 };
 
-interface ActiveLinkProps {
+interface NavLinkProps {
     href: string
     exact?: boolean
     children: ReactNode,
     className: string
 };
 
-export default function ActiveLink({ href, exact, children, ...props }: ActiveLinkProps) {
+export default function NavLink({ href, exact, children, ...props }: NavLinkProps) {
     const { pathname } = useRouter();
     const isActive = exact ? pathname === href : pathname.startsWith(href);
 

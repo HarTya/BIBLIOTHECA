@@ -1,13 +1,14 @@
 @import '../styles/color-variables';
 
 .logo {
+    cursor: default;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     line-height: 1;
-    padding: 10px 0;
+    margin: 10px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -20,9 +21,8 @@
     &_subtitle {
         font-size: 17px;
         letter-spacing: 2px;
-        width: 100%;
         text-align: center;
-        border-bottom: 2px solid $second-color; 
+        border-bottom: 2px solid $accent-color;
         line-height: 0.1em; 
         margin: 10px 0;
         animation: ShowLine 1s linear forwards;

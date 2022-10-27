@@ -1,0 +1,22 @@
+@import '../styles/color-variables';
+
+.input {
+    background-color: $additional-color;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    animation: ShowInput 0.2s linear forwards;
+    @keyframes ShowInput {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    &::placeholder {
+        color: $accent-color;
+    }
+}

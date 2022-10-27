@@ -17,8 +17,8 @@
         position: absolute;
         bottom: 0;
         &_link {
-            font-size: 20px;
-            font-family: LatoBold, sans-serif;
+            font-size: 21px;
+            font-family: LatoSemibold, sans-serif;
             padding: 10px;
             letter-spacing: 1px;
             position: relative;
@@ -30,12 +30,12 @@
                 display: block;
                 width: 0;
                 height: 2px;
-                background-color: $second-color;
+                background-color: $accent-color;
                 position: absolute;
                 bottom: 0;
                 left: 50%;
                 transform: translateX(-50%);
-                transition: width 0.4s ease-in-out;
+                transition: width 0.2s ease-in-out;
             }
             &:hover {
                 &::after {
