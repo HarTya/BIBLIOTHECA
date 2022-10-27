@@ -12,7 +12,7 @@
     left: 0;
     z-index: 100;
     background-color: $main-color;
-    animation: ShowHeader 0.5s linear forwards;
+    animation: ShowHeader 0.8s linear forwards;
     @keyframes ShowHeader {
         0% {
             top: -140px;
