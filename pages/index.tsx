@@ -11,21 +11,21 @@ export default function HomePage() {
 
     const cheaperPrice = 'cheaper';
     const expensivePrice = 'expensive';
-    const [priceFilterState, setPriceFilterState] = useState(cheaperPrice);
+    const [priceFiltrationState, setPriceFiltrationState] = useState(cheaperPrice);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchValue, setSearchValue] = useState('');
 
     return (
         <div className={styles.homePage}>
-            <div className={styles.homePage_filterPanel}>
+            <div className={styles.homePage_filtrationPanel}>
                 {isSearchOpen ? <Input value={searchValue} setValue={setSearchValue} placeholder={'Пошук...'} type={'string'} autoFocus /> :
                     <>
-                        {priceFilterState === cheaperPrice ? 
-                            <div onClick={() => setPriceFilterState(expensivePrice)}>
+                        {priceFiltrationState === cheaperPrice ? 
+                            <div onClick={() => setPriceFiltrationState(expensivePrice)}>
                                 <PriceDown size={40} />
                             </div> :
-                            priceFilterState === expensivePrice ? 
-                            <div onClick={() => setPriceFilterState(cheaperPrice)}>
+                            priceFiltrationState === expensivePrice ? 
+                            <div onClick={() => setPriceFiltrationState(cheaperPrice)}>
                                 <PriceUp size={40} />
                             </div> :
                             <></>
