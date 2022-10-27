@@ -1,10 +1,14 @@
-import Header from './Header';
+import Logo from '@/components/UI/icons/Logo';
 
 export default function Layout({ children }) {
     return (
-        <div id='wrapper'>
-            <Header />
-            <main>{children}</main>
-        </div>
+        <>
+            <header>
+                <Logo />
+            </header>
+            <main>
+                {children}
+            </main>
+        </>
     );
 }

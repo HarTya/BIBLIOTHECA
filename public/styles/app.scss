@@ -38,29 +38,10 @@
 body {
     margin: 0;
     background-color: $additional-color;
-    #wrapper {
-        &::after {
-            content: '';
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1000;
-            animation: ShowApp 2s linear forwards;
-            @keyframes ShowApp {
-                0%, 50% {
-                    background-color: $main-color;
-                }
-                75% {
-                    background-color: transparent;
-                }
-                100% {
-                    pointer-events: none;
-                }
-            }
-        }
+    overflow-x: hidden;
+    header {
+        position: relative;
+        height: 110px;
     }
     main {
         display: flex;

@@ -8,8 +8,8 @@
     position: relative;
     &:hover {
         svg {
-            animation: ReplaceIcon 0.2s linear forwards;
-            @keyframes ReplaceIcon {
+            animation: ResizeIcon 0.2s linear forwards;
+            @keyframes ResizeIcon {
                 0% {
                     transform: scale(1);
                 }
@@ -34,5 +34,6 @@
         transition: opacity 0.2s ease-in-out;
         opacity: 0;
         font-size: 17px;
+        white-space: nowrap;
     }
 }
