@@ -75,3 +75,9 @@ body {
         padding: 30px;
     }
 }
+
+@media (max-width: 575px) {
+    header {
+        height: 75px!important;
+    }
+}

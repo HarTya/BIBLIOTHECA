@@ -21,12 +21,12 @@ export default function HomePage() {
     const [searchValue, setSearchValue] = useState('');
 
     return (
-        <div className={styles.homePage} onClick={() => setIsProductsNavigationOpen(false)}>
+        <div className={styles.homePage}>
+            <div onClick={() => setIsProductsNavigationOpen(false)} className={styles.homePage_navigationBar_close}></div>
             <div
                 onClick={
-                    (e) => {
-                        e.stopPropagation()
-                        return setIsProductsNavigationOpen(true)
+                    () => {
+                        setIsProductsNavigationOpen(true)
                     }
                 }
                 onMouseOver={() => setIsProductsNavigationOpen(true)}

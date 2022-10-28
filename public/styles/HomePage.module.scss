@@ -15,6 +15,8 @@
         justify-content: space-between;
         align-items: center;
         animation: ShowFilterPanel 0.2s linear forwards;
+        position: relative;
+        z-index: 2;
         @keyframes ShowFilterPanel {
             0% {
                 transform: scale(0.85);
@@ -31,16 +33,24 @@
         flex-direction: column;
         width: 50px;
         position: fixed;
-        top: 200px;
+        top: 220px;
         left: 0;
-        bottom: 90px;
-        z-index: 1;
+        bottom: 110px;
+        z-index: 2;
         background-color: $main-color;
         border-radius: 0 15px 10px 0;
         transition: all 0.2s ease-in-out;
         &_active {
             width: 200px;
             border-radius: 0 30px 20px 0;
+        }
+        &_close {
+            position: fixed;
+            top: 110px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
         }
     }
 }
@@ -49,6 +59,13 @@
     .homePage {
         &_filtrationBar {
             width: 240px;
+        }
+        &_navigationBar {
+            top: 185px;
+            bottom: 30px;
+            &_close {
+                top: 75px;
+            }
         }
     }
 }
