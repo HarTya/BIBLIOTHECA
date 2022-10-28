@@ -14,7 +14,7 @@ interface NavLinkProps {
     className: string
 };
 
-export default function NavLink({ href, exact, children, ...props }: NavLinkProps) {
+function NavLink({ href, exact, children, ...props }: NavLinkProps) {
     const { pathname } = useRouter();
     const isActive = exact ? pathname === href : pathname.startsWith(href);
 
@@ -28,3 +28,5 @@ export default function NavLink({ href, exact, children, ...props }: NavLinkProp
         </Link>
     );
 }
+
+export default NavLink;

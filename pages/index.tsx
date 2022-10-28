@@ -8,13 +8,12 @@ import StarList from '@/components/UI/icons/StarList';
 import Input from '@/components/UI/Input';
 import styles from '@/styles/HomePage.module.scss';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from 'store/Hook';
 import { selectProductsState } from 'store/productsSlice';
 
 export default function HomePage() {
 
-    const productsState = useSelector(selectProductsState);
-    console.log(productsState)
+    const productsState = useAppSelector(selectProductsState);
     const [isProductsNavigationOpen, setIsProductsNavigationOpen] = useState(false);
     const [productsFiltrationState, setProductsFiltrationState] = useState(1);
     const [isSearchOpen, setIsSearchOpen] = useState(false);

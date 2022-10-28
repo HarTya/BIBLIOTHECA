@@ -9,7 +9,9 @@ interface ProductsState {
 const initialState: ProductsState = {
     productsState: [
         {
-            name: 'PRODUCT'
+            img: 'https://',
+            name: 'PRODUCT',
+            price: 200
         }
     ]
 };
@@ -17,17 +19,23 @@ const initialState: ProductsState = {
 export const productsSlice = createSlice({
     name: 'products',
     initialState,
+
     reducers: {
         setProductsState(state, action) {
             state.productsState = action.payload;
-        },
+        }
+    },
+
+    extraReducers: {
         [HYDRATE]: (state, action) => {
+            console.log('HYDRATE', action.payload);
             return {
                 ...state,
-                ...action.payload.products
+                ...action.payload.products,
             };
-        }
+        },
     }
+
 });
 
 export const { setProductsState } = productsSlice.actions;

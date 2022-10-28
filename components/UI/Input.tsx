@@ -8,7 +8,7 @@ interface InputProps {
     autoFocus: boolean
 };
 
-export default function Input({ value, setValue, placeholder = '', type = '', ...props }: InputProps) {
+function Input({ value, setValue, placeholder = '', type = '', ...props }: InputProps) {
     return (
         <input
             value={value}
@@ -20,3 +20,5 @@ export default function Input({ value, setValue, placeholder = '', type = '', ..
         />
     );
 }
+
+export default Input;

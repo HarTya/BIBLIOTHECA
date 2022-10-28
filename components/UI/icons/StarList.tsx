@@ -1,6 +1,6 @@
 import styles from '@/styles/Icon.module.scss';
 
-export default function StarList({ size = 50, color = 'currentColor', ...props }) {
+function StarList({ size = 50, color = 'currentColor', ...props }) {
     return (
         <span className={styles.icon}>
             <p className={styles.icon_text}>Всі (обране)</p>
@@ -15,3 +15,5 @@ export default function StarList({ size = 50, color = 'currentColor', ...props }
         </span>
     );
 }
+
+export default StarList;

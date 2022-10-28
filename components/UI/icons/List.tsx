@@ -1,6 +1,6 @@
 import styles from '@/styles/Icon.module.scss';
 
-export default function List({ size = 50, color = 'currentColor', ...props }) {
+function List({ size = 50, color = 'currentColor', ...props }) {
     return (
         <span className={styles.icon}>
             <p className={styles.icon_text}>Всі</p>
@@ -14,3 +14,5 @@ export default function List({ size = 50, color = 'currentColor', ...props }) {
         </span>
     );
 }
+
+export default List;
