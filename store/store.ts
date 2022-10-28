@@ -6,8 +6,7 @@ const makeStore = () =>
     configureStore({
         reducer: {
             [productsSlice.name]: productsSlice.reducer,
-        },
-        devTools: true,
+        }
     })
 
 export type AppStore = ReturnType<typeof makeStore>;

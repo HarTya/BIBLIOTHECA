@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     &_filtrationBar {
         width: 300px;
         height: 50px;
@@ -28,13 +29,11 @@
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        height: 50%;
-        margin: auto 0;
         width: 50px;
         position: fixed;
-        top: 140px;
+        top: 200px;
         left: 0;
-        bottom: 30px;
+        bottom: 90px;
         z-index: 1;
         background-color: $main-color;
         border-radius: 0 15px 10px 0;
@@ -42,6 +41,14 @@
         &_active {
             width: 200px;
             border-radius: 0 30px 20px 0;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .homePage {
+        &_filtrationBar {
+            width: 240px;
         }
     }
 }
