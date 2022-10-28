@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &_filtrationPanel {
+    &_filtrationBar {
         width: 350px;
         height: 50px;
         border-radius: 15px 10px;
@@ -21,6 +21,24 @@
             100% {
                 transform: scale(1);
             }
+        }
+    }
+    &_navigationBar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 50px;
+        position: fixed;
+        top: 200px;
+        left: 0;
+        bottom: 90px;
+        background-color: $main-color;
+        border-radius: 0 15px 10px 0;
+        transition: all 0.2s ease-in-out;
+        &_active {
+            width: 200px;
+            border-radius: 0 30px 20px 0;
         }
     }
 }

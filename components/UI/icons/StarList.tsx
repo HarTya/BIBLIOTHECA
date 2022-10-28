@@ -3,7 +3,7 @@ import styles from '@/styles/Icon.module.scss';
 export default function StarList({ size = 50, color = 'currentColor', ...props }) {
     return (
         <span className={styles.icon}>
-            <p className={styles.icon_text}>По порядку (обране)</p>
+            <p className={styles.icon_text}>Всі (обране)</p>
             <svg width={size} height={size} fill={color} viewBox='0 0 24 24' {...props}>
                 <path
                     fillRule='evenodd'

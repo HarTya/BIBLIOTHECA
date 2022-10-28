@@ -8,16 +8,30 @@ import StarList from '@/components/UI/icons/StarList';
 import Input from '@/components/UI/Input';
 import styles from '@/styles/HomePage.module.scss';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectProductsState } from 'store/productsSlice';
 
 export default function HomePage() {
 
+    const productsState = useSelector(selectProductsState);
+    console.log(productsState)
+    const [isProductsNavigationOpen, setIsProductsNavigationOpen] = useState(false);
     const [productsFiltrationState, setProductsFiltrationState] = useState(1);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchValue, setSearchValue] = useState('');
 
     return (
         <div className={styles.homePage}>
-            <div className={styles.homePage_filtrationPanel}>
+            <div 
+                onMouseOver={() => setIsProductsNavigationOpen(true)}
+                onMouseLeave={() => setIsProductsNavigationOpen(false)}
+                className={isProductsNavigationOpen
+                    ? `${styles.homePage_navigationBar} ${styles.homePage_navigationBar_active}`
+                    : styles.homePage_navigationBar
+                }
+            >
+            </div>
+            <div className={styles.homePage_filtrationBar}>
                 {isSearchOpen ? <Input value={searchValue} setValue={setSearchValue} placeholder={'Пошук...'} type={'string'} autoFocus /> :
                     <>
                         {productsFiltrationState === 1 ? 
