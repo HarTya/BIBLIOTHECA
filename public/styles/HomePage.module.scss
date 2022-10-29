@@ -36,14 +36,14 @@
         top: 220px;
         left: 0;
         bottom: 110px;
-        z-index: 2;
+        z-index: 3;
         background-color: $main-color;
         border-radius: 0 15px 10px 0;
         transition: all 0.2s ease-in-out;
         &_active {
             width: 200px;
             border-radius: 0 30px 20px 0;
-            border: 2px solid $additional-color;
+            outline: 1px solid $accent-color;
         }
         &_close {
             position: fixed;
@@ -70,10 +70,10 @@
             width: 240px;
         }
         &_navigationBar {
-            top: 185px;
+            top: 190px;
             bottom: 30px;
             &_close {
-                top: 75px;
+                top: 80px;
             }
         }
         &_products {
