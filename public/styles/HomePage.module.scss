@@ -1,12 +1,13 @@
 @import '../styles/color-variables';
 
 .homePage {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     &_filtrationBar {
-        width: 300px;
+        width: 350px;
         height: 50px;
         border-radius: 15px 10px;
         background-color: $main-color;
@@ -40,14 +41,16 @@
         background-color: $main-color;
         border-radius: 0 15px 10px 0;
         transition: all 0.2s ease-in-out;
+        outline: 2px solid transparent;
+        overflow: hidden;
         &_active {
             width: 200px;
             border-radius: 0 30px 20px 0;
-            outline: 1px solid $accent-color;
+            outline: 2px solid $accent-color;
         }
         &_close {
             position: fixed;
-            top: 110px;
+            top: 0;
             left: 0;
             right: 0;
             bottom: 0;
@@ -55,32 +58,37 @@
         }
     }
     &_products {
-        max-width: 1020px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin: 10px 30px;
+        padding: 10px 30px;
     }
 }
 
 @media (max-width: 575px) {
     .homePage {
         &_filtrationBar {
-            width: 240px;
+            width: 100%;
+            padding: 0 20px;
         }
         &_navigationBar {
-            top: 190px;
-            bottom: 30px;
-            &_close {
-                top: 80px;
+            width: calc(100% - 60px);
+            top: calc(100% - 50px);
+            left: 30px;
+            right: 30px;
+            bottom: 0;
+            border-radius: 15px 10px 0 0;
+            height: 50px;
+            &_active {
+                top: calc(100% - 200px);
+                height: 200px;
+                border-radius: 30px 20px 0 0;
             }
         }
         &_products {
-            position: relative;
-            left: 25px;
-            margin: 10px 0;
-            flex-direction: column;
+            padding: 10px 0;
         }
     }
 }

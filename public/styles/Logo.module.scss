@@ -46,7 +46,7 @@
         letter-spacing: 2px;
         text-align: center;
         border-bottom: 2px solid $accent-color;
-        line-height: 0.01em; 
+        line-height: 0; 
         margin: 10px 0;
         animation: ShowSubtitle 1s linear forwards;
         @keyframes ShowSubtitle {
@@ -73,7 +73,7 @@
             font-size: 35px;
         }
         &_subtitle {
-            font-size: 14px;
+            font-size: 12px;
         }
     }
 }
