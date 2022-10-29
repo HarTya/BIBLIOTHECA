@@ -9,10 +9,35 @@ interface ProductsState {
 const initialState: ProductsState = {
     productsState: [
         {
+            id: 1,
             img: 'https://',
-            name: 'PRODUCT',
+            name: 'Американо',
             price: 200
-        }
+        },
+        {
+            id: 2,
+            img: 'https://',
+            name: 'Эспрессо',
+            price: 200
+        },
+        {
+            id: 3,
+            img: 'https://',
+            name: 'Нигер',
+            price: 200
+        },
+        {
+            id: 4,
+            img: 'https://',
+            name: 'Капучино',
+            price: 200
+        },
+        {
+            id: 5,
+            img: 'https://',
+            name: 'Латте',
+            price: 200
+        },
     ]
 };
 

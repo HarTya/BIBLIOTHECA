@@ -1,20 +1,9 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { ReactNode } from 'react';
 import styles from '@/styles/Header.module.scss';
+import { NavLinkProps } from '../interfaces';
 
-NavLink.defaultProps = {
-    exact: false
-};
-
-interface NavLinkProps {
-    href: string
-    exact?: boolean
-    children: ReactNode,
-    className: string
-};
-
-function NavLink({ href, exact, children, ...props }: NavLinkProps) {
+function NavLink({ href, exact = false, children, ...props }: NavLinkProps) {
     const { pathname } = useRouter();
     const isActive = exact ? pathname === href : pathname.startsWith(href);
 

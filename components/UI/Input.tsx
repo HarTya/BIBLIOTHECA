@@ -1,12 +1,5 @@
 import styles from '@/styles/Input.module.scss';
-
-interface InputProps {
-    value: string,
-    setValue: (value: string) => void,
-    placeholder?: string,
-    type?: string,
-    autoFocus: boolean
-};
+import { InputProps } from '../interfaces';
 
 function Input({ value, setValue, placeholder = '', type = '', ...props }: InputProps) {
     return (
