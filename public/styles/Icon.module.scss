@@ -6,7 +6,7 @@
     position: relative;
     &:hover {
         svg {
-            animation: ResizeIcon 0.2s linear forwards;
+            animation: ResizeIcon 0.2s ease-in-out forwards;
             @keyframes ResizeIcon {
                 0% {
                     transform: scale(1);

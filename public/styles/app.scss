@@ -48,7 +48,7 @@
     border-radius: 15px;
     border: 4px solid $additional-color;
     &:hover {
-        background-color: $nonaccent-color;
+        background-color: $non-accent-color;
     }
 }
 
@@ -95,6 +95,6 @@ body {
 
 @media (max-width: 575px) {
     header {
-        height: 80px!important;
+        height: 100px!important;
     }
 }
