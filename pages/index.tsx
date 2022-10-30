@@ -1,5 +1,5 @@
 import prisma from 'lib/prisma';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import ProductList from '@/components/ProductList';
 import Close from '@/components/UI/icons/Close';
 import List from '@/components/UI/icons/List';
@@ -12,7 +12,7 @@ import Input from '@/components/UI/Input';
 import styles from '@/styles/HomePage.module.scss';
 import { useState } from 'react';
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     const products = await prisma.product.findMany();
     
     return {
