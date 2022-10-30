@@ -1,3 +1,5 @@
+import prisma from 'lib/prisma';
+import { GetServerSideProps } from 'next';
 import ProductList from '@/components/ProductList';
 import Close from '@/components/UI/icons/Close';
 import List from '@/components/UI/icons/List';
@@ -10,7 +12,15 @@ import Input from '@/components/UI/Input';
 import styles from '@/styles/HomePage.module.scss';
 import { useState } from 'react';
 
-export default function HomePage() {
+export const getServerSideProps: GetServerSideProps = async () => {
+    const products = await prisma.product.findMany();
+    
+    return {
+        props: { products }
+    }
+};
+
+function HomePage({ products }) {
 
     const [isProductsNavigationOpen, setIsProductsNavigationOpen] = useState(false);
     const [productsFiltrationState, setProductsFiltrationState] = useState(1);
@@ -83,8 +93,10 @@ export default function HomePage() {
                 </div>
             </div>
             <div className={styles.homePage_products}>
-                <ProductList />
+                <ProductList products={products} />
             </div>
         </div>
     );
 }
+
+export default HomePage;

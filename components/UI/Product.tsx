@@ -1,10 +1,13 @@
 import styles from '@/styles/Product.module.scss';
+import { ProductProps } from '../interfaces';
 import BlankStar from './icons/BlankStar';
 
-function Product({ img, name, price }) {
+function Product({ id, image, name, price }: ProductProps) {
     return (
         <div className={styles.product}>
-            <img src={img} alt='Картинка продукта' />
+            <div className={styles.product_img}>
+                <img src={image} alt='Картинка продукта' />
+            </div>
             <div className={styles.product_content}>
                 <div>
                     <span>{name}</span>
