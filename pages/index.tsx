@@ -22,7 +22,8 @@ export default function HomePage() {
             <div onClick={() => setIsProductsNavigationOpen(false)} className={styles.homePage_navigationBar_close}></div>
             <div
                 onClick={
-                    () => {
+                    (e) => {
+                        e.stopPropagation()
                         setIsProductsNavigationOpen(true)
                     }
                 }

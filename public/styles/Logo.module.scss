@@ -12,7 +12,6 @@
     top: 0;
     left: 0;
     z-index: 1001;
-    background-color: $main-color;
     animation: ShowLogo 2s ease-in-out forwards;
     @keyframes ShowLogo {
         0%, 50% {
@@ -45,7 +44,7 @@
         font-size: 17px;
         letter-spacing: 2px;
         text-align: center;
-        border-bottom: 2px solid $accent-color;
+        border-bottom: 2px solid $additional-color;
         line-height: 0; 
         margin: 10px 0;
         animation: ShowSubtitle 1s ease-in-out forwards;
@@ -62,7 +61,16 @@
         span {
             font-family: LatoBold, sans-serif;
             padding: 0 10px;
-            background-color: $main-color;
+            animation: ChangeBackgroundSubtitleText 3s linear forwards;
+            background-color: $background-color;
+            @keyframes ChangeBackgroundSubtitleText {
+                0%, 66% {
+                    background-color: $main-color;
+                }
+                76% {
+                    background-color: $background-color;
+                }
+            }
         }
     }
 }

@@ -41,17 +41,10 @@
         background-color: $main-color;
         border-radius: 0 15px 10px 0;
         transition: all 0.2s ease-in-out;
-        border-left: 2px solid transparent;
-        border-top: 2px solid transparent;
-        border-right: 2px solid transparent;
-        border-bottom: 2px solid transparent;
         overflow: hidden;
         &_active {
             width: 200px;
             border-radius: 0 30px 20px 0;
-            border-top: 2px solid $accent-color;
-            border-right: 2px solid $accent-color;
-            border-bottom: 2px solid $accent-color;
         }
         &_close {
             position: fixed;
@@ -84,18 +77,11 @@
             right: 30px;
             bottom: 0;
             border-radius: 15px 10px 0 0;
-            border-left: 2px solid transparent;
-            border-top: 2px solid transparent;
-            border-right: 2px solid transparent;
-            border-bottom: 2px solid transparent;
             height: 50px;
             &_active {
                 top: calc(100% - 200px);
                 height: 200px;
                 border-radius: 30px 20px 0 0;
-                border-top: 2px solid $accent-color;
-                border-right: 2px solid $accent-color;
-                border-left: 2px solid $accent-color;
             }
         }
         &_products {
