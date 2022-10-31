@@ -34,7 +34,7 @@ function Product({ id, image, name, price }: ProductProps) {
         }
 
         dispatch(setFavoritesState([...favoritesState, favoriteProduct]))
-    }
+    };
 
     useEffect(() => {
         setIsFavorite(false)

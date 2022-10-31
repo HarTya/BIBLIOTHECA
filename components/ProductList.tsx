@@ -26,7 +26,6 @@ function ProductList({ products, searchValue, productsFiltration }) {
     }, [searchValue.length])
 
     useEffect(() => {
-
         if (productsFiltration === 1) {
             dispatch(setProductsState(products))
         }
@@ -48,7 +47,6 @@ function ProductList({ products, searchValue, productsFiltration }) {
         if (productsFiltration === 4) {
             dispatch(setProductsState(favoritesState))
         }
-
     }, [productsFiltration])
 
     return (

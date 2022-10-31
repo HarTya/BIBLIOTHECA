@@ -64,7 +64,7 @@ function HomePage({ products }) {
             >
             </div>
             <div className={styles.homePage_filtrationBar}>
-                {isSearchOpen ? <Input value={searchValue} setValue={setSearchValue} placeholder={'Пошук...'} type={'string'} autoFocus /> :
+                {isSearchOpen ? <Input value={searchValue} setValue={setSearchValue} placeholder={'Пошук...'} autoFocus /> :
                     <>
                         {productsFiltrationState === 1 ? 
                             <div onClick={() => setProductsFiltrationState(2)}>

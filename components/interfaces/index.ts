@@ -5,7 +5,7 @@ export interface InputProps {
     setValue: (value: string) => void,
     placeholder?: string,
     type?: string,
-    autoFocus: boolean
+    autoFocus?: boolean
 }
 
 export interface NavLinkProps {
