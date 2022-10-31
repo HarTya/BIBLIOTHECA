@@ -27,12 +27,10 @@ function HomePage({ products }) {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-
         if (localStorage.getItem('favorites')) {
             const favoritesState = JSON.parse(localStorage.getItem('favorites'));
             dispatch(setFavoritesState(favoritesState))
         }
-
     }, [])
 
     const [isProductsNavigationOpen, setIsProductsNavigationOpen] = useState(false);

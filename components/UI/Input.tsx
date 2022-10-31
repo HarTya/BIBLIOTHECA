@@ -1,7 +1,7 @@
 import styles from '@/styles/Input.module.scss';
 import { InputProps } from '../interfaces';
 
-function Input({ value, setValue, placeholder = '', type = '', ...props }: InputProps) {
+function Input({ value, setValue, placeholder = 'placeholder', type = 'string', ...props }: InputProps) {
     return (
         <input
             value={value}

@@ -4,10 +4,21 @@ import '@/styles/app.scss';
 import Head from 'next/head';
 import { wrapper } from 'store/store';
 import { Provider } from 'react-redux';
+import { useEffect } from 'react';
 
 function App({ Component, ...rest }: AppProps) {
 
     const { store, props } = wrapper.useWrappedStore(rest);
+
+    useEffect(() => {
+
+        const Debounce = setTimeout(() => {
+            document.body.className = 'scroll';
+        }, 2500);
+
+        return () => clearTimeout(Debounce)
+        
+    }, [])
 
     return (
         <Provider store={store}>

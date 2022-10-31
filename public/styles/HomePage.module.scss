@@ -15,17 +15,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        animation: ShowFilterPanel 0.2s ease-in-out forwards;
         position: relative;
         z-index: 2;
-        @keyframes ShowFilterPanel {
-            0% {
-                transform: scale(0.85);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
     }
     &_navigationBar {
         display: flex;
@@ -78,6 +69,7 @@
             bottom: 0;
             border-radius: 15px 10px 0 0;
             height: 50px;
+            transition: height 0.2s ease-in-out, border-radius 0.2s ease-in-out, top 0.2s ease-in-out;
             &_active {
                 top: calc(100% - 200px);
                 height: 200px;
