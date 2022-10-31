@@ -67,8 +67,12 @@
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575px), (max-height: 600px) {
     .product {
+        height: 350px;
         margin: 20px 0;
+        &_img {
+            height: 250px;
+        }
     }
 }
