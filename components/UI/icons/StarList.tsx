@@ -1,9 +1,9 @@
 import styles from '@/styles/Icon.module.scss';
 
-function StarList({ size = 50, color = 'currentColor', ...props }) {
+function StarList({ text = false, size = 50, color = 'currentColor', ...props }) {
     return (
         <span className={styles.icon}>
-            <p className={styles.icon_text}>Всі (обране)</p>
+            {text ? <p className={styles.icon_text}>Обране</p> : <></>}
             <svg width={size} height={size} fill={color} viewBox='0 0 24 24' {...props}>
                 <path
                     fillRule='evenodd'

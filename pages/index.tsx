@@ -10,7 +10,9 @@ import Star from '@/components/UI/icons/Star';
 import StarList from '@/components/UI/icons/StarList';
 import Input from '@/components/UI/Input';
 import styles from '@/styles/HomePage.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAppDispatch } from 'store/Hook';
+import { setFavoritesState } from 'store/productsSlice';
 
 export const getStaticProps: GetStaticProps = async () => {
     const products = await prisma.product.findMany();
@@ -21,10 +23,28 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 function HomePage({ products }) {
+    
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+
+        if (localStorage.getItem('favorites')) {
+            const favoritesState = JSON.parse(localStorage.getItem('favorites'));
+            dispatch(setFavoritesState(favoritesState))
+        }
+
+    }, [])
 
     const [isProductsNavigationOpen, setIsProductsNavigationOpen] = useState(false);
     const [productsFiltrationState, setProductsFiltrationState] = useState(1);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+    useEffect(() => {
+        if (isSearchOpen) {
+            setProductsFiltrationState(productsFiltrationState === 4 ? 4 : 1)
+        }
+    }, [isSearchOpen])
+
     const [searchValue, setSearchValue] = useState('');
 
     return (
@@ -50,18 +70,18 @@ function HomePage({ products }) {
                     <>
                         {productsFiltrationState === 1 ? 
                             <div onClick={() => setProductsFiltrationState(2)}>
-                                <List size={40} />
+                                <List text size={40} />
                             </div> :
                             productsFiltrationState === 2 ? 
                             <div onClick={() => setProductsFiltrationState(3)}>
-                                <PriceDown size={40} />
+                                <PriceDown text size={40} />
                             </div> :
                             productsFiltrationState === 3 ? 
                             <div onClick={() => setProductsFiltrationState(1)}>
-                                <PriceUp size={40} />
+                                <PriceUp text size={40} />
                             </div> :
                             <div onClick={() => setProductsFiltrationState(1)}>
-                                <StarList size={40} />
+                                <StarList text size={40} />
                             </div>
                         }
                         <div 
@@ -74,7 +94,7 @@ function HomePage({ products }) {
                                 }
                             }
                         >
-                            {productsFiltrationState === 4 ? <Close size={40} /> : <Star size={40} />}
+                            {productsFiltrationState === 4 ? <Close text size={40} /> : <Star text size={40} />}
                         </div>
                     </>
                 }
@@ -89,11 +109,11 @@ function HomePage({ products }) {
                         }
                     }
                 >
-                    {isSearchOpen ? <Close size={40} /> : <Search size={40} />}
+                    {isSearchOpen ? <Close text size={40} /> : <Search text size={40} />}
                 </div>
             </div>
             <div className={styles.homePage_products}>
-                <ProductList products={products} />
+                <ProductList products={products} searchValue={searchValue} productsFiltration={productsFiltrationState} />
             </div>
         </div>
     );

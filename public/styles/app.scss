@@ -56,6 +56,15 @@ body {
     margin: 0;
     background-color: $background-color;
     overflow-x: hidden;
+    animation: ScrollAvailable 3s ease-in-out forwards;
+    @keyframes ScrollAvailable {
+        0%, 66% {
+            overflow-y: hidden;
+        }
+        76% {
+            overflow-y: auto;
+        }
+    }
     #wrapper {
         &::after {
             content: '';
@@ -66,7 +75,7 @@ body {
             right: 0;
             bottom: 0;
             z-index: 1000;
-            animation: ShowApp 3s linear forwards;
+            animation: ShowApp 3s ease-in-out forwards;
             @keyframes ShowApp {
                 0%, 66% {
                     background-color: $main-color;
