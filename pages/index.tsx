@@ -68,18 +68,18 @@ function HomePage({ products }) {
                     <>
                         {productsFiltrationState === 1 ? 
                             <div onClick={() => setProductsFiltrationState(2)}>
-                                <List text size={40} />
+                                <List text />
                             </div> :
                             productsFiltrationState === 2 ? 
                             <div onClick={() => setProductsFiltrationState(3)}>
-                                <PriceDown text size={40} />
+                                <PriceDown text />
                             </div> :
                             productsFiltrationState === 3 ? 
                             <div onClick={() => setProductsFiltrationState(1)}>
-                                <PriceUp text size={40} />
+                                <PriceUp text />
                             </div> :
                             <div onClick={() => setProductsFiltrationState(1)}>
-                                <StarList text size={40} />
+                                <StarList text />
                             </div>
                         }
                         <div 
@@ -92,7 +92,7 @@ function HomePage({ products }) {
                                 }
                             }
                         >
-                            {productsFiltrationState === 4 ? <Close text size={40} /> : <Star text size={40} />}
+                            {productsFiltrationState === 4 ? <Close text /> : <Star text />}
                         </div>
                     </>
                 }
@@ -107,7 +107,7 @@ function HomePage({ products }) {
                         }
                     }
                 >
-                    {isSearchOpen ? <Close text size={40} /> : <Search text size={40} />}
+                    {isSearchOpen ? <Close text /> : <Search text />}
                 </div>
             </div>
             <div className={styles.homePage_products}>

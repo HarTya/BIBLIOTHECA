@@ -1,6 +1,6 @@
 import styles from '@/styles/Icon.module.scss';
 
-function PriceDown({ text = false, size = 50, color = 'currentColor', ...props }) {
+function PriceDown({ text = false, size = 40, color = 'currentColor', ...props }) {
     return (
         <span className={styles.icon}>
             {text ? <p className={styles.icon_text}>Дешевше</p> : <></>}

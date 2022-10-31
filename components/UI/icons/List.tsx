@@ -1,6 +1,6 @@
 import styles from '@/styles/Icon.module.scss';
 
-function List({ text = false, size = 50, color = 'currentColor', ...props }) {
+function List({ text = false, size = 40, color = 'currentColor', ...props }) {
     return (
         <span className={styles.icon}>
             {text ? <p className={styles.icon_text}>Всі</p> : <></>}

@@ -57,7 +57,7 @@ function Product({ id, image, name, price }: ProductProps) {
                     <p>{price} ₴</p>
                 </div>
                 <span onClick={() => manageFavorite()}>
-                    {isFavorite ? <Star size={40} /> : <BlankStar size={40} />}
+                    {isFavorite ? <Star /> : <BlankStar />}
                 </span>
             </div>
         </div>
