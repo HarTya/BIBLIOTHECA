@@ -92,7 +92,7 @@ function HomePage({ products }) {
                                 }
                             }
                         >
-                            {productsFiltrationState === 4 ? <Close text /> : <Star text />}
+                            {productsFiltrationState === 4 ? <Close /> : <Star text />}
                         </div>
                     </>
                 }
@@ -107,7 +107,7 @@ function HomePage({ products }) {
                         }
                     }
                 >
-                    {isSearchOpen ? <Close text /> : <Search text />}
+                    {isSearchOpen ? <Close /> : <Search text />}
                 </div>
             </div>
             <div className={styles.homePage_products}>
