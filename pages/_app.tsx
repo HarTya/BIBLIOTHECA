@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import Layout from '@/components/Layout';
+import Layout from '@/components/UI/Layout';
 import '@/styles/app.scss';
 import Head from 'next/head';
 import { wrapper } from 'store/store';

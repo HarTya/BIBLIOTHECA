@@ -47,7 +47,7 @@ function HomePage({ products }) {
 
     return (
         <div className={styles.homePage}>
-            <div onClick={() => setIsProductsNavigationOpen(false)} className={styles.homePage_navigationBar_close}></div>
+            {/* <div onClick={() => setIsProductsNavigationOpen(false)} className={styles.homePage_navigationBar_close}></div>
             <div
                 onClick={
                     (e) => {
@@ -62,9 +62,12 @@ function HomePage({ products }) {
                     : styles.homePage_navigationBar
                 }
             >
-            </div>
+            </div> */}
             <div className={styles.homePage_filtrationBar}>
-                {isSearchOpen ? <Input value={searchValue} setValue={setSearchValue} placeholder={'Пошук...'} autoFocus /> :
+                {isSearchOpen ? <>
+                    <Search disable />
+                    <Input value={searchValue} setValue={setSearchValue} placeholder={'Пошук...'} autoFocus />
+                </> :
                     <>
                         {productsFiltrationState === 1 ? 
                             <div onClick={() => setProductsFiltrationState(2)}>

@@ -21,7 +21,8 @@
     "baseUrl": ".",
     "paths": {
       "@/styles/*": ["public/styles/*"],
-      "@/components/*": ["components/*"]
+      "@/components/*": ["components/*"],
+      "@/images/*": ["public/images/*"]
     }
   },
   "include": [

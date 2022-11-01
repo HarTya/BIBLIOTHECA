@@ -5,23 +5,45 @@
     align-items: center;
     position: relative;
     padding: 5px;
+    animation: ShowIcon 0.2s ease-in-out forwards;
+    @keyframes ShowIcon {
+        0% {
+            opacity: 0;
+            transform: scale(0.85);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    svg {
+        transition: transform 0.2s ease-in-out;
+    }
     &:hover {
         svg {
-            animation: ResizeIcon 0.2s ease-in-out forwards;
-            @keyframes ResizeIcon {
-                0% {
-                    transform: scale(1);
-                }
-                50% {
-                    transform: scale(0.85);
-                }
-                100% {
-                    transform: scale(1);
-                }
-            }
+            transform: scale(1.1);
         }
         p {
             opacity: 1;
+        }
+    }
+    &_disable {
+        cursor: default;
+        animation: ShowDisableIcon 0.2s ease-in-out forwards;
+        @keyframes ShowDisableIcon {
+            0% {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+            100% {
+                opacity: 0.85;
+                transform: scale(1);
+            }
+        }
+        &:hover {
+            svg {
+                transform: none;
+            }
         }
     }
     &_text {
@@ -34,5 +56,6 @@
         opacity: 0;
         font-size: 17px;
         white-space: nowrap;
+        letter-spacing: 1px;
     }
 }

@@ -9,6 +9,8 @@
     font-size: 20px;
     animation: ShowInput 0.2s ease-in-out forwards;
     color: $additional-color;
+    letter-spacing: 1px;
+    padding-left: 2px;
     @keyframes ShowInput {
         0% {
             opacity: 0;
@@ -19,5 +21,6 @@
     }
     &::placeholder {
         color: $additional-color;
+        opacity: 0.85;
     }
 }

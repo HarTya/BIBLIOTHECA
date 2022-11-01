@@ -1,11 +1,9 @@
-import Logo from '@/components/UI/icons/Logo';
+import Header from '@/components/UI/Header';
 
 function Layout({ children }) {
     return (
         <div id='wrapper'>
-            <header>
-                <Logo />
-            </header>
+            <Header />
             <main>
                 {children}
             </main>
