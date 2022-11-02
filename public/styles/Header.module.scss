@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
     background-color: $main-opacity-color;
     animation: ShowHeader 2s ease-in-out forwards;
     @keyframes ShowHeader {
@@ -31,13 +31,48 @@
         padding: 30px;
         opacity: 0;
         pointer-events: none;
-        backdrop-filter: blur(2px);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        backdrop-filter: blur(3px);
         background-color: $main-opacity-color;
         transition: height 0.2s ease-in-out, opacity 0.2s ease-in-out;
         &_active {
             opacity: 1;
             pointer-events: all;
             height: calc(100vh - 150px);
+        }
+        &_link {
+            cursor: pointer;
+            padding: 15px;
+            font-size: 20px;
+            font-family: LatoBold, sans-serif;
+            letter-spacing: 1px;
+            position: relative;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                border-radius: 15px;
+                background-color: $additional-color;
+                transition: width 0.2s ease-in-out;
+            }
+            &:hover {
+                opacity: 0.7;
+            }
+            &_active {
+                &::after {
+                    width: 50%;
+                }
+                opacity: 0.7;
+            }
         }
     }
     &_logo {

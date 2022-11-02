@@ -10,8 +10,11 @@ import { useAppDispatch, useAppSelector } from 'store/Hook';
 import { CategoryProps } from '../interfaces';
 import { selectCategoriesState, selectIsMenuOpenState, setIsMenuOpenState } from 'store/categoriesSlice';
 import Close from './icons/Close';
+import { useRouter } from 'next/router';
 
 function Header() {
+
+    const router = useRouter();
 
     const categoriesState = useAppSelector(selectCategoriesState);
     const isMenuOpenState = useAppSelector(selectIsMenuOpenState);
@@ -71,7 +74,8 @@ function Header() {
                 >
                     {isBarMenuOpenState ? 
                         <Close size={60} />
-                        : <Image src={BarManu} width={200} height={100} alt='' priority />}
+                        : <Image src={BarManu} width={200} height={100} alt='' priority />
+                    }
                 </div>
                 <Link href={'/'}>
                     {isCircleLogo ? 
@@ -99,17 +103,40 @@ function Header() {
                 >
                     {isFoodMenuOpenState ? 
                         <Close size={60} />
-                        : <Image src={FoodMenu} width={200} height={100} alt='' priority />}
+                        : <Image src={FoodMenu} width={200} height={100} alt='' priority />
+                    }
                 </div>
             </header>
             <div className={isMenuOpenState ? `${styles.header_menu_active} ${styles.header_menu}` : styles.header_menu}>
                 {isBarMenuOpenState ? 
                     barMenuCategoriesState.map((category: CategoryProps) => 
-                        <div key={category.id}>{category.name}<br /><br /></div>
+                        <div 
+                            className={router.asPath === `/${category.id}` ? `${styles.header_menu_link_active} ${styles.header_menu_link}` : styles.header_menu_link} 
+                            onClick={
+                                async () => {
+                                    await router.push('/') 
+                                    router.push(category.id)
+                                }
+                            }
+                            key={category.id}
+                        >
+                            {category.name}
+                        </div>
                     ) :
                     isFoodMenuOpenState ? 
                     foodMenuCategoriesState.map((category: CategoryProps) => 
-                        <div key={category.id}>{category.name}<br /><br /></div>
+                        <div 
+                            className={router.asPath === `/${category.id}` ? `${styles.header_menu_link_active} ${styles.header_menu_link}` : styles.header_menu_link} 
+                            onClick={
+                                async () => {
+                                    await router.push('/')
+                                    router.push(category.id)
+                                }
+                            } 
+                            key={category.id}
+                        >
+                            {category.name}
+                        </div>
                     ) :
                     <></>
                 }

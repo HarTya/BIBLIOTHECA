@@ -1,6 +1,6 @@
 @import '../styles/color-variables';
 
-.homePage {
+.categoryPage {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -17,6 +17,17 @@
         align-items: center;
         position: relative;
         z-index: 2;
+        animation: ShowFiltrationBar 0.2s ease-in-out forwards;
+        @keyframes ShowFiltrationBar {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
         &_search {
             position: relative;
             display: flex;
@@ -49,34 +60,6 @@
             }
         }
     }
-    &_navigationBar {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
-        width: 50px;
-        position: fixed;
-        top: 220px;
-        left: 0;
-        bottom: 110px;
-        z-index: 3;
-        background-color: $main-color;
-        border-radius: 0 15px 10px 0;
-        transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
-        overflow: hidden;
-        &_active {
-            width: 200px;
-            border-radius: 0 30px 20px 0;
-        }
-        &_close {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-    }
     &_products {
         width: 100%;
         display: flex;
@@ -88,24 +71,9 @@
 }
 
 @media (max-width: 575px), (max-height: 600px) {
-    .homePage {
+    .categoryPage {
         &_filtrationBar {
             width: 100%;
-        }
-        &_navigationBar {
-            width: calc(100% - 60px);
-            top: calc(100% - 50px);
-            left: 30px;
-            right: 30px;
-            bottom: 0;
-            border-radius: 15px 10px 0 0;
-            height: 50px;
-            transition: height 0.2s ease-in-out, border-radius 0.2s ease-in-out, top 0.2s ease-in-out;
-            &_active {
-                top: calc(100% - 200px);
-                height: 200px;
-                border-radius: 30px 20px 0 0;
-            }
         }
         &_products {
             justify-content: space-around;
