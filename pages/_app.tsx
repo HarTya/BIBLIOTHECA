@@ -13,7 +13,7 @@ function App({ Component, ...rest }: AppProps) {
     useEffect(() => {
         const Debounce = setTimeout(() => {
             document.body.className = 'scroll';
-        }, 2000);
+        }, 2500);
 
         return () => clearTimeout(Debounce)
     }, [])

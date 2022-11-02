@@ -39,7 +39,7 @@
                 padding-left: 5px;
                 animation: ShowSearchInput 0.3s ease-in-out forwards;
                 @keyframes ShowSearchInput {
-                    0% {
+                    0%, 50% {
                         opacity: 0;
                     }
                     100% {

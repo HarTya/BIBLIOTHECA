@@ -6,7 +6,7 @@ import { ProductProps } from '../interfaces';
 import BlankStar from './icons/BlankStar';
 import Star from './icons/Star';
 
-function Product({ id, image, name, price }: ProductProps) {
+function Product({ id, image, name, price, alternativeProposal, description, caption, country, categoryId }: ProductProps) {
 
     const favoritesState = useAppSelector(selectFavoritesState);
     const [isFavorite, setIsFavorite] = useState(false);

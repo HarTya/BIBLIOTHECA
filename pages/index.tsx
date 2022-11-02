@@ -13,20 +13,23 @@ import styles from '@/styles/HomePage.module.scss';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from 'store/Hook';
 import { setFavoritesState } from 'store/productsSlice';
+import { setCategoriesState } from 'store/categoriesSlice';
 
 export const getStaticProps: GetStaticProps = async () => {
     const products = await prisma.product.findMany();
+    const categories = await prisma.category.findMany();
     
     return {
-        props: { products }
+        props: { products, categories }
     }
 };
 
-function HomePage({ products }) {
+function HomePage({ products, categories }) {
     
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        dispatch(setCategoriesState(categories))
         if (localStorage.getItem('favorites')) {
             const favoritesState = JSON.parse(localStorage.getItem('favorites'));
             dispatch(setFavoritesState(favoritesState))

@@ -52,7 +52,18 @@ function ProductList({ products, searchValue, productsFiltration }) {
     return (
         <>
             {productsState.map((product: ProductProps) => 
-                <Product key={product.id} id={product.id} image={product.image} name={product.name} price={product.price} />
+                <Product 
+                    key={product.id} 
+                    id={product.id} 
+                    image={product.image} 
+                    name={product.name} 
+                    price={product.price} 
+                    alternativeProposal={product.alternativeProposal}
+                    description={product.description}
+                    caption={product.caption}
+                    country={product.country}
+                    categoryId={product.categoryId}
+                />
             )}
         </>
     );

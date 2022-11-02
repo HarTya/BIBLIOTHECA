@@ -16,8 +16,20 @@ export interface NavLinkProps {
 }
 
 export interface ProductProps {
-    id: number,
-    image: string,
+    id: string,
+    image?: string,
     name: string,
-    price: number
+    price: number,
+    alternativeProposal?: string,
+    description?: string,
+    caption?: string,
+    country?: string,
+    categoryId: string
+}
+
+export interface CategoryProps {
+    id: string,
+    image?: string,
+    name: string,
+    menu: number
 }
