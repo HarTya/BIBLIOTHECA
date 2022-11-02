@@ -22,7 +22,6 @@ function Header() {
     }
 
     useEffect(() => {
-
         if (localStorage.getItem('logoState')) {
             const logoState = localStorage.getItem('logoState');
             setIsCircleLogo(!logoState)
