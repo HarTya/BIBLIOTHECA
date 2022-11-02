@@ -64,10 +64,11 @@ function HomePage({ products }) {
             >
             </div> */}
             <div className={styles.homePage_filtrationBar}>
-                {isSearchOpen ? <>
-                    <Search disable />
-                    <Input value={searchValue} setValue={setSearchValue} placeholder={'Пошук...'} autoFocus />
-                </> :
+                {isSearchOpen ? 
+                    <div className={styles.homePage_filtrationBar_search}>
+                        <Search disable={!searchValue.trim()} />
+                        <Input value={searchValue} setValue={setSearchValue} placeholder={'Пошук'} autoFocus />
+                    </div> :
                     <>
                         {productsFiltrationState === 1 ? 
                             <div onClick={() => setProductsFiltrationState(2)}>

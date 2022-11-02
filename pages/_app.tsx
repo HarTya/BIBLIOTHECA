@@ -11,13 +11,11 @@ function App({ Component, ...rest }: AppProps) {
     const { store, props } = wrapper.useWrappedStore(rest);
 
     useEffect(() => {
-
         const Debounce = setTimeout(() => {
             document.body.className = 'scroll';
-        }, 2500);
+        }, 2000);
 
         return () => clearTimeout(Debounce)
-        
     }, [])
 
     return (
